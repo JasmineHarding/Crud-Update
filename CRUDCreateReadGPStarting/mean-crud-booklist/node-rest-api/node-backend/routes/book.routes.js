@@ -14,4 +14,14 @@ bookRoute.route('/').get((req, res) => {
   })
 })
 
+// Update a book
+bookRoute.route('/update-book/:id').update((req, res) => {
+Book.findByIdAndUpdate(req.params.id).then(() => {
+  console.log('Book updated successfully.');
+  res.status(200);
+  })
+  .catch((error) => {
+    console.error(`Could not update book: ${error}`);
+    })
+  })
 module.exports = bookRoute;

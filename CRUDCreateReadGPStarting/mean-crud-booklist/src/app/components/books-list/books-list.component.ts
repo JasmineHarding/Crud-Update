@@ -18,4 +18,12 @@ export class BooksListComponent implements OnInit {
       this.Books =res;
     });    
   }
+  onUpdate(id: any): any {
+    const updatedData = "";
+
+    this.crudService.UpdateBook(id, updatedData)
+    .subscribe(res => {
+      console.log('Book updated successfully:', res);
+    })
+  }
 }

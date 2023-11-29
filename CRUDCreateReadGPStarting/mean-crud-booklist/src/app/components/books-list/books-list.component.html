@@ -21,6 +21,10 @@
             <td>{{book.title}}</td>
             <td>{{book.author}}</td>
             <td>{{book.description}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-primary" (click)="onUpdate(book._id)" >Update</button>
+              <button class="btn btn-sm btn-danger" (click)="onDelete(book._id)" >Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>
